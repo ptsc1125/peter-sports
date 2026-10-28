@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #00a0e9;
+  --color-on-brand: #ffffff;
+  --color-ink: #163044;
+  --color-muted: #5d7184;
+  --color-bg: #f2f6f9;
+  --color-card: #ffffff;
+  --color-field: #e7eef4;
+  --color-line: #d3dee8;
+  --font-sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", sans-serif;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+}
+
+@keyframes splash-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.splash-line {
+  animation: splash-rise 0.55s ease both;
+}
+.boot-splash {
+  animation: boot-splash 0.6s linear forwards;
+}
+@keyframes boot-splash {
+  0%, 55% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
